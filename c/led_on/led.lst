@@ -1,0 +1,23 @@
+     1: #include<stdio.h>
+     2: #include<pic.h>
+     3: 
+     4: //#define butten RC0
+     5: #define led PORTB
+     6: 
+     7: #define on 0XFF
+     8: #define off 0X00
+     9: 
+    10: //#define close 1
+    11: //#define open 0
+    12: 
+    13: void config_io(void)
+    14: {
+    15: TRISB=0X00;
+    16: }
+    17: 
+    18: void main(void)
+    19: {
+    20: config_io();
+    21: led=on;
+    22: 
+    23: }

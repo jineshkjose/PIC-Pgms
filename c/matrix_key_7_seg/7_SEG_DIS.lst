@@ -1,0 +1,169 @@
+     1: #include<stdio.h>
+     2: #include<pic.h>
+     3: 
+     4: 
+     5: 
+     6: 
+     7: #define on 0XFF
+     8: #define off 0X00
+     9: 
+    10: #define row1 RD3
+    11: #define row2 RD4
+    12: #define row3 RD5
+    13: #define row4 RD6
+    14: 
+    15: #define col1 RD0
+    16: #define col2 RD1
+    17: #define col3 RD2
+    18: 
+    19: #define key PORTB
+    20: 
+    21: #define on 0XFF
+    22: #define off 0X00
+    23: 
+    24: 
+    25: void config_io(void)
+    26: {
+    27: TRISB=0X00;
+    28: TRISD3=TRISD4=TRISD5=TRISD6=TRISD7=0;
+    29: TRISD0=TRISD1=TRISD2=1;
+    30: key=0x00;
+    31: }
+    32: 
+    33: void delay(void)
+    34: {
+    35: unsigned int delay;
+    36: for(delay=0;delay<65000;delay++);
+    37: }
+    38: 
+    39: 
+    40: 
+    41: void main(void)
+    42: {
+    43: config_io();
+    44:  
+    45: while(1)
+    46: {
+    47: 
+    48: 
+    49: /*key=off;
+    50: delay();
+    51: key=0X0C;
+    52: delay();
+    53: key=0XB6;
+    54: delay();
+    55: key=0X9E;
+    56: delay();
+    57: key=0XCC;
+    58: delay();
+    59: key=0XDA;
+    60: delay();
+    61: key=0XFA;
+    62: delay();
+    63: key=0X4E;
+    64: delay();
+    65: key=0XFF;
+    66: delay();
+    67: key=0XDE;
+    68: delay();
+    69: key=0X7F;
+    70: delay();*/
+    71: 
+    72: 
+    73: row1=1;
+    74: RD7=1;
+    75: if(col1==1)
+    76: key=0X0C;
+    77: else if(col2==1)
+    78: key=0XB6;
+    79: else if(col3==1) 
+    80: key=0X9E;
+    81: RD7=0;
+    82: row1=0;
+    83: 
+    84: 
+    85: row2=1;
+    86: RD7=1;
+    87: if(col1==1)
+    88: key=0XCC;
+    89: else if(col2==1)
+    90: key=0XDA;
+    91: else if(col3==1) 
+    92: key=0XFA;
+    93: RD7=0;
+    94: row2=0;
+    95: 
+    96: 
+    97: 
+    98: row3=1;
+    99: RD7=1;
+   100: if(col1==1)
+   101: key=0X4E;
+   102: else if(col2==1)
+   103: key=0XFF;
+   104: else if(col3==1) 
+   105: key=0XDE;
+   106: RD7=0;
+   107: row3=0;
+   108: 
+   109: 
+   110: row4=1;
+   111: if(col1==1)
+   112: {
+   113: 
+   114: key=0X7F;
+   115: delay();
+   116: key=0XDE;
+   117: delay();
+   118: key=0XFF;
+   119: delay();
+   120: key=0X4E;
+   121: delay();
+   122: key=0XFA;
+   123: delay();
+   124: key=0XDA;
+   125: delay();
+   126: key=0XCC;
+   127: delay();
+   128: key=0X9E;
+   129: delay();
+   130: key=0XB6;
+   131: delay();
+   132: key=0X0C;
+   133: delay();
+   134: 
+   135: }
+   136: else if(col2==1)
+   137: key=0X7F;
+   138: else if(col3==1)
+   139: {
+   140: 
+   141: key=off;
+   142: delay();
+   143: key=0X0C;
+   144: delay();
+   145: key=0XB6;
+   146: delay();
+   147: key=0X9E;
+   148: delay();
+   149: key=0XCC;
+   150: delay();
+   151: key=0XDA;
+   152: delay();
+   153: key=0XFA;
+   154: delay();
+   155: key=0X4E;
+   156: delay();
+   157: key=0XFF;
+   158: delay();
+   159: key=0XDE;
+   160: delay();
+   161: key=0X7F;
+   162: delay();
+   163: 
+   164: }
+   165: RD7=0;
+   166: row4=0;
+   167: 
+   168: }
+   169: }

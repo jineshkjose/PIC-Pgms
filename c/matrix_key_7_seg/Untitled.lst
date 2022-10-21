@@ -1,0 +1,67 @@
+     1: #include<stdio.h>
+     2: #include<pic.h>
+     3: 
+     4: 
+     5: char keycodes[16] = {'1','2','3','4','5','6','7','8','9','*','0','#'};
+     6: #define KEYP_NUM_ROWS 4
+     7: #define KEYP_NUM_COLS 3
+     8: char keypadread()
+     9: // Find a key, wait for
+    10: // it to be released and return.
+    11:  { char key = scankeypad();
+    12:    if (key)
+    13:       while (scankeypad() != 0)
+    14:          /* Nothing */  ;  
+    15:    return key;
+    16: 
+    17: 
+    18: 
+    19: 
+    20:  } 
+    21: 
+    22: char scankeypad()
+    23: // Scan the keypad for a keypress.
+    24: // Return 0 for no press or the char pressed.
+    25:  { 
+    26: char row,col,tmp;
+    27:    char key=0;
+    28: 
+    29:    // Disable ADC functionality on Port A
+    30:    ADCON1 = 6; 
+    31: 
+    32:    // Initialise Port for input, and PORTC for output
+    33:    TRISA = PORTC = 0xFF;
+    34:    TRISC = 0;
+    35: 
+    36:    for (row=0; row < KEYP_NUM_ROWS; row++)
+    37:     { // Drive appropriate row low and read columns:
+    38:       PORTC = ~(1 << row);
+    39:       asm ( "NOP");     
+    40:       tmp = PORTA;
+    41:     
+    42:       // See if any column is active (low):
+    43:       for (col=0; col<KEYP_NUM_COLS; ++col)
+    44:          if ((tmp & (1<<col)) == 0)
+    45:           { signed char idx = (row*KEYP_NUM_COLS) + col;
+    46:             key = keycodes[idx]; 
+    47:             goto DONE;
+    48:           }
+    49:     }
+    50:    DONE:
+    51: 
+    52:    // Disable Port Drive and return.
+    53:    TRISC = 0xFF;
+    54:    return key;
+    55:  }
+    56: 
+    57: 
+    58: void main(char)
+    59: {
+    60: while(1)
+    61: {
+    62: keypadread();
+    63: 
+    64: 
+    65: }
+    66: 
+    67: }
