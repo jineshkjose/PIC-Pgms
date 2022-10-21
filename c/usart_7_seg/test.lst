@@ -1,0 +1,84 @@
+     1: #include<pic.h>
+     2: static void interrupt seg_isr(void);
+     3: unsigned char a  = 0;
+     4: main()
+     5: {
+     6:         TRISD=0;
+     7:         PORTD=0;
+     8:         SPBRG=129;
+     9:         BRGH=1;
+    10:         SYNC=0;
+    11:         CREN=1;
+    12:         SPEN=1;
+    13:         RCIF=0;
+    14:         RCIE=1;
+    15:         GIE=1;
+    16:         PEIE=1;
+    17: 
+    18:         while(1)
+    19:                 {
+    20:                         if(a=='1')
+    21:                         {
+    22:                             PORTD=0X0C;
+    23: 
+    24:                                                         }
+    25:                         if(a=='2')
+    26:                         {
+    27:                 PORTD=0XB6;
+    28:                         
+    29:                         }
+    30:                         
+    31:                                 if(a=='3')
+    32:                         {
+    33:                         PORTD=0X9E;
+    34:                                 
+    35:                         }       
+    36:                                 if(a=='4')
+    37:                         {PORTD=0XCC;
+    38:                                 
+    39:                                 
+    40:                         }
+    41:                                 if(a=='5')
+    42:                         {
+    43: 
+    44:                PORTD= 0XDA;
+    45:                                 
+    46:                                 
+    47:                         }
+    48:                                 if(a=='6')
+    49:                         {PORTD=0XFA;
+    50:                         
+    51:                                 
+    52:                         }
+    53:                                 if(a=='7')
+    54:                         {PORTD=0X4E;
+    55:                                 
+    56:                                 
+    57:                         }
+    58:                                 if(a=='8')
+    59:                         {
+    60:                         PORTD=0XFF;
+    61:                                 
+    62:                         }
+    63:                                 if(a=='9')
+    64:                         {
+    65:                                 PORTD=0XDE;
+    66:                         }
+    67:                                 if(a=='0')
+    68:                         {
+    69:                                 PORTD=0X7F;
+    70:                                 
+    71:                         }
+    72:                 }
+    73: }
+    74:         
+    75: static void interrupt seg_isr(void)
+    76: {
+    77:         GIE = 0;
+    78:         if(RCIF)        
+    79:         {
+    80:                 RCIF=0;
+    81:                 a=RCREG;
+    82:         }
+    83:         GIE = 1;
+    84: }

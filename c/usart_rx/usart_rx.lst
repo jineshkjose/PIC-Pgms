@@ -1,0 +1,33 @@
+     1: #include<pic.h>
+     2: 
+     3: static interrupt receive_isr();
+     4: 
+     5: void main(void)
+     6: {
+     7: TRISD=0X00;
+     8: PORTD=0X00;
+     9: SPBRG=129;
+    10: BRGH=1;
+    11: SYNC=0;
+    12: SPEN=1;
+    13: CREN=1;
+    14: RX9=0;
+    15: RCIF=0;
+    16: RCIE=1;
+    17: GIE=1;
+    18: PEIE=1;
+    19: while(1)
+    20: {
+    21: }
+    22: }
+    23: 
+    24: 
+    25: static interrupt receive_isr()
+    26: {
+    27: if(!RCIF);
+    28: else
+    29: {
+    30: RCIF=0;
+    31: PORTD=RCREG;
+    32: }
+    33: }

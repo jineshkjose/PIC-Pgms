@@ -1,0 +1,21 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=D:\Mplab Progs\c\Copy of urt_lcd\dd_lcd.obj
+Folder=Intermediary
+[File001]
+Location=D:\Mplab Progs\c\Copy of urt_lcd\dd_lcd.cce
+Folder=Intermediary
+[File002]
+Location=D:\Mplab Progs\c\Copy of urt_lcd\urt_lcd_main.obj
+Folder=Intermediary
+[File003]
+Location=D:\Mplab Progs\c\Copy of urt_lcd\urt_lcd_main.cce
+Folder=Intermediary
+[File004]
+Location=D:\Mplab Progs\c\Copy of urt_lcd\urt_lcd.lde
+Folder=Intermediary
+[File005]
+Location=urt_lcd.cof
+Folder=Output
