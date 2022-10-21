@@ -1,0 +1,68 @@
+     1: #include<pic.h>
+     2: #include "delay.h"
+     3: #include"lcd.h"
+     4: 
+     5: 
+     6: void SPI_Init(void);
+     7: 
+     8: 
+     9: float data,data1;
+    10: unsigned char adc;
+    11: int i;
+    12: char rec;
+    13: 
+    14: main()
+    15: {
+    16:         TRISA=0xFF;
+    17:         TRISC = 0X00;
+    18:         TRISD=0X00;
+    19:         PORTD=0X00;
+    20:         TRISC4 = 1;
+    21:         ADCON0=0X81;
+    22:         ADCON1=0X00;
+    23:         
+    24:         SPI_Init();
+    25: 
+    26: lcd_init();
+    27:         DelayMs(20);
+    28:         lcd_goto(0x00);
+    29:         DelayMs(20);
+    30:         lcd_clear();
+    31:         DelayMs(20);
+    32:         lcd_puts("..:: MASTER PIC :..");
+    33:         DelayMs(10000);
+    34: 
+    35:         lcd_clear();
+    36:         while(1)
+    37: {
+    38:  
+    39:         for (i=0;i<250;++i);
+    40:         ADGO=1;
+    41:         while(ADGO);
+    42:         adc = ADRESH;
+    43: SSPBUF=adc;
+    44: while(!STAT_BF);
+    45:         data = ((5.0/255)*adc); 
+    46:         lcd_goto(0x00);
+    47:         lcd_num_float(data);
+    48: DelayMs(1);
+    49: 
+    50: /*while(!STAT_BF);
+    51:         rec = SSPBUF;
+    52: lcd_goto(0x40);
+    53: if(rec=='a')
+    54: lcd_puts("data rexd");
+    55: else
+    56: lcd_puts("2222222222");*/
+    57: 
+    58: 
+    59: 
+    60: }
+    61: }
+    62: 
+    63: void SPI_Init(void)
+    64: {
+    65:   SSPSTAT = 0x00;
+    66:   SSPCON = 0b00100010; //the config word for this register will change based on the clock polarity, and clock edge
+    67: }
+    68: 

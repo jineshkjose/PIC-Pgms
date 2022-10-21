@@ -1,0 +1,53 @@
+     1: #include<pic.h>
+     2: #include "delay.h"
+     3: #include "lcd.h"
+     4: 
+     5: 
+     6: float adc;
+     7: unsigned char data;
+     8: 
+     9: void SPI_Init(void);
+    10: 
+    11: main()
+    12: {
+    13:         TRISC = 0X00;
+    14:         TRISD = 0X00;
+    15:         PORTD = 0x00;
+    16:         TRISC4 = 1;
+    17:         TRISC3 = 1;
+    18:         SPI_Init();
+    19: 
+    20: lcd_init();
+    21:         DelayMs(20);
+    22:         lcd_goto(0x00);
+    23:         DelayMs(20);
+    24:         lcd_clear();
+    25:         DelayMs(20);
+    26:         lcd_puts("..:: SLAVE PIC:..");
+    27:         DelayMs(10000);
+    28:         lcd_clear();
+    29:         
+    30:         while(1)
+    31: {
+    32: 
+    33: 
+    34:         while(!STAT_BF);
+    35:         data = SSPBUF;
+    36: adc = ((5.0/255)*data);
+    37: lcd_goto(0x00);
+    38: lcd_num_float(adc);
+    39:  
+    40: //SSPBUF='a';
+    41: //while(!STAT_BF);
+    42: 
+    43: }
+    44: }
+    45: 
+    46: void SPI_Init(void)
+    47: {
+    48:    SSPSTAT = 0x00;
+    49:    SSPCON = 0b00100101; //the config word for this register will change based on the clock polarity, and clock edge
+    50: }
+    51: 
+    52: 
+    53: 

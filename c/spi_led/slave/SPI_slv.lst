@@ -1,0 +1,29 @@
+     1: #include<pic.h>
+     2: #include "delay.h"
+     3: 
+     4: void SPI_Init(void);
+     5: 
+     6: main()
+     7: {
+     8:         TRISC = 0X00;
+     9:         TRISB = 0X00;
+    10:         PORTB = 0x00;
+    11:         TRISC4 = 1;
+    12:         TRISC3 = 1;
+    13:         SPI_Init();
+    14:         
+    15:         while(1)
+    16: {
+    17:         while(!STAT_BF);
+    18:         PORTB = SSPBUF;
+    19: }
+    20: }
+    21: 
+    22: void SPI_Init(void)
+    23: {
+    24:    SSPSTAT = 0x00;
+    25:    SSPCON = 0b00100101; //the config word for this register will change based on the clock polarity, and clock edge
+    26: }
+    27: 
+    28: 
+    29: 

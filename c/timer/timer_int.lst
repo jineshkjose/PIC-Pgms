@@ -1,0 +1,55 @@
+     1: #include<pic.h>
+     2: void timer_init(void);
+     3: void portd_init(void);
+     4: static interrupt timer_isr(void);
+     5: unsigned int count;
+     6: main()
+     7: {
+     8:         timer_init();
+     9:         portd_init();
+    10:         count=0;
+    11:         PEIE = 1;
+    12:         GIE = 1;
+    13:         TMR1ON = 1;
+    14: loop:
+    15:         goto loop;
+    16: }
+    17: 
+    18: void timer_init(void)
+    19: {
+    20:         T1CON = 0x00;
+    21:         TMR1L = 0x78;
+    22:         TMR1H = 0xEC;
+    23:         TMR1IE = 1;
+    24:         TMR1IF = 0;
+    25: }
+    26: 
+    27: void portd_init(void)
+    28: {
+    29:         TRISD = 0x00;
+    30:         PORTD = 0x00;
+    31: }
+    32: 
+    33: static interrupt timer_isr(void)
+    34: {
+    35:         if(TMR1IF == 0)
+    36:                 {
+    37:                 //return(0);
+    38:                 }
+    39:         else
+    40:                 {
+    41:                         TMR1IF = 0;
+    42:                         //PORTD = ~PORTD;
+    43: 
+    44: if(count==1000)
+    45: {
+    46: PORTD = ~PORTD;
+    47: count=0;
+    48: }
+    49:                         TMR1L = 0x3c;
+    50:                         TMR1H = 0xf6;
+    51:                         count++;
+    52:                         
+    53:                         //return(1);
+    54:                 }
+    55: }

@@ -1,0 +1,391 @@
+_i 22 0 BANK0
+used_btemp3 1 0
+?a_lcd_num_float 2D 0 BANK0
+__Hinit23 8 0 CODE
+__Linit23 8 0 CODE
+used_btemp11 1 0
+__Hcode_ptr 62 0 BANK0
+__Lcode_ptr 60 0 BANK0
+__S0 2100 0
+__S1 190 0
+_adc 20 0 BANK0
+_rec 21 0 BANK0
+used_btemp4 1 0
+?_lcd_num_dec 2A 0 BANK0
+used_btemp5 1 0
+used_btemp12 1 0
+l0neg 72D 0 CODE
+ftadd 5F3 0 CODE
+_data 24 0 BANK0
+ftneg 725 0 CODE
+llmod 73B 0 CODE
+ftsub 5F1 0 CODE
+_main 127 0 CODE
+abmul E1D 0 CODE
+ftcmp 622 0 CODE
+lbmul E1D 0 CODE
+almul 7C3 0 CODE
+fttol 68B 0 CODE
+llmul 7C3 0 CODE
+zerct 6D9 0 CODE
+ftmul 64A 0 CODE
+lldiv 73B 0 CODE
+_exit 4 0 CODE
+start 4 0 CODE
+used_btemp6 1 0
+?a_lcd_num_dec 2A 0 BANK0
+used_code_ptr 1 0
+used_btemp7 1 0
+_data1 27 0 BANK0
+used_btemp13 1 0
+__Hfloat_text2 46 0 CODE
+__Lfloat_text2 46 0 CODE
+?a_lcd_putch 2A 0 BANK0
+__Brbit_0 20 FFFFFF20 BANK0
+__Hrbit_0 100 FFFFFF20 BANK0
+__Lrbit_0 100 FFFFFF20 BANK0
+used_btemp8 1 0
+__Brbit_1 A0 FFFFFBA0 BANK1
+__Hrbss_0 5D 0 BANK0
+__Hrbit_1 500 FFFFFBA0 BANK1
+__Lrbss_0 20 0 BANK0
+__Lrbit_1 500 FFFFFBA0 BANK1
+__Brbit_2 110 FFFFF890 BANK2
+__Hrbss_1 A0 0 BANK1
+__Hrbit_2 880 FFFFF890 BANK2
+__Lrbss_1 A0 0 BANK1
+__Lrbit_2 880 FFFFF890 BANK2
+_lcd_scroll_right E6D 0 CODE
+__Brbit_3 190 FFFFF510 BANK3
+__Hrbss_2 110 0 BANK2
+__Hrbit_3 C80 FFFFF510 BANK3
+__Lrbss_2 110 0 BANK2
+__Lrbit_3 C80 FFFFF510 BANK3
+flunpack1 6CD 0 CODE
+ftunpack1 580 0 CODE
+__Hrbss_3 190 0 BANK3
+_putch 46 0 CODE
+__Lrbss_3 190 0 BANK3
+__Hintcode 4 0 CODE
+__Lintcode 4 0 CODE
+flunpack2 6DE 0 CODE
+used_btemp9 1 0
+ftunpack2 58F 0 CODE
+intlevel0 4 0 CODE
+used_btemp14 1 0
+abtoft 573 0 CODE
+lbtoft 57C 0 CODE
+altoft 6AE 0 CODE
+doldiv 73F 0 CODE
+lltoft 6B3 0 CODE
+zerctt 58B 0 CODE
+intlevel1 4 0 CODE
+_lcd_init_cursor_left_end E5B 0 CODE
+__Heeprom_data 2100 0 EEDATA
+__Leeprom_data 2100 0 EEDATA
+?a_DelayMs 42 0 BANK0
+_lcd_putch F4F 0 CODE
+__Hidata_0 46 0 CODE
+__Lidata_0 46 0 CODE
+__Hrdata_0 5D 0 BANK0
+__Lrdata_0 5D 0 BANK0
+__Hintsave_0 190 0
+__Lintsave_0 190 0
+__Hidata_1 46 0 CODE
+__Lidata_1 46 0 CODE
+__Hrdata_1 A0 0 BANK1
+__Lrdata_1 A0 0 BANK1
+flnorm1 6FA 0 CODE
+ftnorm1 5AA 0 CODE
+__Hidata_2 46 0 CODE
+__Hintsave 190 0
+__Lidata_2 46 0 CODE
+__Lintsave 190 0
+__Hintentry 4 0 CODE
+__Lintentry 4 0 CODE
+__Hrdata_2 110 0 BANK2
+__Lrdata_2 110 0 BANK2
+_lcd_write EFD 0 CODE
+__Hidata_3 46 0 CODE
+__Lidata_3 46 0 CODE
+__Hrdata_3 190 0 BANK3
+__Lrdata_3 190 0 BANK3
+_lcd_clear E37 0 CODE
+?a_lcd_write 44 0 BANK0
+__Hnvram_1 A0 0 BANK1
+__Lnvram_1 A0 0 BANK1
+__Bnvbit_0 5D FFFFFD75 BANK0
+__Hnvbit_0 2E8 FFFFFD75 BANK0
+__Lnvbit_0 2E8 FFFFFD75 BANK0
+?a_sprintf 45 0 BANK0
+__Hnvram_2 110 0 BANK2
+__Lnvram_2 110 0 BANK2
+__Hintsave_1 190 0
+__Lintsave_1 190 0
+__Bnvbit_1 A0 FFFFFBA0 BANK1
+__Hnvbit_1 500 FFFFFBA0 BANK1
+__Lnvbit_1 500 FFFFFBA0 BANK1
+__Hnvram_3 190 0 BANK3
+__Lnvram_3 190 0 BANK3
+?a_lcd_scroll_puts 2A 0 BANK0
+__Bnvbit_2 110 FFFFF890 BANK2
+__Hnvbit_2 880 FFFFF890 BANK2
+__Lnvbit_2 880 FFFFF890 BANK2
+ftadd_f 5D0 0 CODE
+__Hcode 190 0
+__Lcode 190 0
+ftsub_f 5CE 0 CODE
+almul_f 6C1 0 CODE
+llmul_f 6C1 0 CODE
+ftmul_f 641 0 CODE
+lldiv_f 7B7 0 CODE
+__Bnvbit_3 190 FFFFF510 BANK3
+__Hnvbit_3 C80 FFFFF510 BANK3
+__Lnvbit_3 C80 FFFFF510 BANK3
+__Hfloat_text3 46 0 CODE
+__Lfloat_text3 46 0 CODE
+__Htemp 7C 0 BANK0
+__Ltemp 70 0 BANK0
+ftadd_x 5F4 0 CODE
+abmul_t E1E 0 CODE
+lbmul_t E1E 0 CODE
+__Hinit 8 0 CODE
+__Linit 4 0 CODE
+__Hintsave_2 190 0
+__Lintsave_2 190 0
+almul_x 7C4 0 CODE
+llmul_x 7C4 0 CODE
+ftmul_x 64B 0 CODE
+lldiv_x 73C 0 CODE
+powerup 0 0 CODE
+__Htext 190 0
+__Ltext 190 0
+?_lcd_scroll_puts 2A 0 BANK0
+__Hstrings 46 0 STRING
+__Lstrings 29 0 STRING
+_lcd_cursor_right E7F 0 CODE
+_lcd_scroll_puts FA2 0 CODE
+__Hstringtable 29 0 ENTRY
+__Lstringtable 13 0 ENTRY
+__Hintsave_3 190 0
+__Lintsave_3 190 0
+__Hcommon_ram 190 0
+__Lcommon_ram 190 0
+?_lcd_num_float 2A 0 BANK0
+__Hpowerup 4 0 CODE
+__Lpowerup 0 0 CODE
+_lcd_num_dec EB3 0 CODE
+__Hvectors 46 0 CODE
+__Lvectors 46 0 CODE
+?_lcd_puts 42 0 BANK0
+__Hclrtext 13 0 CODE
+__Lclrtext C 0 CODE
+storeback 7F1 0 CODE
+__Hconfig 2007 0 CONFIG
+__Lconfig 2007 0 CONFIG
+__Hfloat_text0 800 0 CODE
+__Lfloat_text0 6C1 0 CODE
+clear_ram F 0 CODE
+__Hfloat_text4 6C1 0 CODE
+__Lfloat_text4 573 0 CODE
+string_indir 16 0 ENTRY
+?_sprintf 42 0 BANK0
+_SPI_Init 48 0 CODE
+storeback_3 567 0 CODE
+_lcd_init 79 0 CODE
+_lcd_goto E29 0 CODE
+__Hintret 4 0 CODE
+__Lintret 4 0 CODE
+__Hstruct 62 0 BANK0
+__Lstruct 62 0 BANK0
+_lcd_num_float ED7 0 CODE
+_lcd_puts 51 0 CODE
+_lcd_scroll E49 0 CODE
+__Hidloc 2000 0 IDLOC
+__Lidloc 2000 0 IDLOC
+clear_bank0 4 0 CODE
+_DelayMs E91 0 CODE
+__Hnvram 5D 0 BANK0
+__Lnvram 5D 0 BANK0
+_sprintf 1D6 0 CODE
+string_table 13 0 ENTRY
+__Hxtemp 60 0 BANK0
+__Lxtemp 5D 0 BANK0
+ftdenorm 5D9 0 CODE
+__H__Z49231UD_ 190 0
+__L__Z49231UD_ 190 0
+code_ptr 60 0 BANK0
+__Hfloat_text1 46 0 CODE
+__Lfloat_text1 46 0 CODE
+used_btemp0 1 0
+__Hpstrings 29 0 CODE
+__Lpstrings 29 0 CODE
+?a_lcd_init 2A 0 BANK0
+__Hend_init C 0 CODE
+__Lend_init 8 0 CODE
+?a_lcd_goto 2A 0 BANK0
+used_btemp1 1 0
+used_btemp10 1 0
+used_btemp2 1 0
+%segments
+powerup 0 7 CODE
+intentry 8 8F CODE
+rbit_0 100 141 BANK0
+temp 70 7B COMBANK
+float_text0 D82 FFF CODE
+float_text4 AE6 D81 CODE
+ftext0 ACE AE5 CODE
+text0 3AC ACD CODE
+text0 24E 3AB CODE
+text12 F2 24D CODE
+text3 1F44 1FFF CODE
+text4 1E9E 1F43 CODE
+text0 1DFA 1E9D CODE
+text2 A2 F1 CODE
+text6 1DAE 1DF9 CODE
+text7 1D66 1DAD CODE
+text0 1D22 1D65 CODE
+text10 1CFE 1D21 CODE
+text9 1CDA 1CFD CODE
+text11 1CB6 1CD9 CODE
+text8 1C92 1CB5 CODE
+text1 1C6E 1C91 CODE
+text5 1C52 1C6D CODE
+text 1C3A 1C51 CODE
+text1 90 A1 CODE
+%locals
+D:\studies\project\plc\simulation\spi_adc_lcd\master\delay.obj
+status 3
+D:\studies\project\plc\simulation\spi_adc_lcd\master\delay.c
+12 E91 0 CODE
+20 E91 0 CODE
+22 E94 0 CODE
+23 E98 0 CODE
+24 E98 0 CODE
+25 EA4 0 CODE
+26 EAA 0 CODE
+28 EB0 0 CODE
+D:\studies\project\plc\simulation\spi_adc_lcd\master\SPI_mstr.obj
+btemp 70 0 BANK0
+status 3
+D:\studies\project\plc\simulation\spi_adc_lcd\master\SPI_mstr.c
+16 127 0 CODE
+17 12B 0 CODE
+18 12C 0 CODE
+19 12D 0 CODE
+20 12F 0 CODE
+21 131 0 CODE
+22 134 0 CODE
+24 136 0 CODE
+26 13B 0 CODE
+27 140 0 CODE
+28 146 0 CODE
+29 14C 0 CODE
+30 152 0 CODE
+31 157 0 CODE
+32 15D 0 CODE
+33 166 0 CODE
+35 16C 0 CODE
+36 171 0 CODE
+39 172 0 CODE
+40 18A 0 CODE
+41 18D 0 CODE
+42 194 0 CODE
+43 198 0 CODE
+44 19A 0 CODE
+45 1A1 0 CODE
+46 1BB 0 CODE
+47 1C1 0 CODE
+48 1CC 0 CODE
+36 1D2 0 CODE
+61 1D3 0 CODE
+65 48 0 CODE
+66 4B 0 CODE
+67 4E 0 CODE
+D:\studies\project\plc\simulation\spi_adc_lcd\master\lcd.obj
+btemp 70 0 BANK0
+status 3
+D:\studies\project\plc\simulation\spi_adc_lcd\master\lcd.c
+38 EFD 0 CODE
+39 F00 0 CODE
+40 F07 0 CODE
+41 F1F 0 CODE
+42 F28 0 CODE
+43 F40 0 CODE
+44 F4C 0 CODE
+53 E37 0 CODE
+54 E3A 0 CODE
+55 E40 0 CODE
+56 E46 0 CODE
+63 51 0 CODE
+64 54 0 CODE
+67 55 0 CODE
+64 67 0 CODE
+71 76 0 CODE
+75 FA2 0 CODE
+76 FA2 0 CODE
+78 FA5 0 CODE
+79 FAA 0 CODE
+81 FB0 0 CODE
+82 FB1 0 CODE
+84 FB2 0 CODE
+85 FC4 0 CODE
+82 FC5 0 CODE
+88 FD4 0 CODE
+90 FD8 0 CODE
+91 FDD 0 CODE
+88 FE3 0 CODE
+93 FFD 0 CODE
+100 F4F 0 CODE
+101 F52 0 CODE
+102 F5A 0 CODE
+103 F72 0 CODE
+104 F7B 0 CODE
+105 F93 0 CODE
+106 F9F 0 CODE
+116 E29 0 CODE
+117 E2C 0 CODE
+118 E34 0 CODE
+122 ED7 0 CODE
+124 ED7 0 CODE
+125 EEB 0 CODE
+129 EF4 0 CODE
+130 EFA 0 CODE
+134 EB3 0 CODE
+136 EB3 0 CODE
+137 EC5 0 CODE
+138 ECE 0 CODE
+139 ED4 0 CODE
+144 E49 0 CODE
+145 E4C 0 CODE
+146 E52 0 CODE
+147 E58 0 CODE
+152 E6D 0 CODE
+153 E70 0 CODE
+154 E76 0 CODE
+155 E7C 0 CODE
+160 E7F 0 CODE
+161 E82 0 CODE
+162 E88 0 CODE
+163 E8E 0 CODE
+168 E5B 0 CODE
+169 E5E 0 CODE
+170 E64 0 CODE
+171 E6A 0 CODE
+179 79 0 CODE
+180 7C 0 CODE
+181 82 0 CODE
+182 84 0 CODE
+183 9C 0 CODE
+184 A2 0 CODE
+185 BA 0 CODE
+186 C6 0 CODE
+187 E0 0 CODE
+188 E6 0 CODE
+189 E8 0 CODE
+190 100 0 CODE
+191 10C 0 CODE
+192 112 0 CODE
+193 118 0 CODE
+194 11E 0 CODE
+195 124 0 CODE
