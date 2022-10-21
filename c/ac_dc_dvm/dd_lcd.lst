@@ -1,0 +1,141 @@
+     1: 
+     2: #include <pic.h>
+     3: #include "dd_lcd.h"
+     4: #include <stdio.h>
+     5: 
+     6: #define LCD_STROBE      ((LCD_EN = 1),(LCD_EN=0))
+     7: 
+     8: void Config_IO(void)
+     9: {
+    10: //ADCON1=0X06;
+    11:     TRISB=0X00;
+    12:         TRISC=0X00;     
+    13: }
+    14: 
+    15: 
+    16:    
+    17: void LCD_Scrol_String(const char *str)
+    18: {
+    19: Set_LCD_Command(0x8f);
+    20:  while(*str)
+    21:   {
+    22:     Set_LCD_Data(*str++);
+    23:     Set_LCD_Command(0x1C);       
+    24: LCD_Delay_Scrol();
+    25:    }     
+    26: LCD_Delay_Scrol();
+    27: Set_LCD_Command(LCD_CLEAR);
+    28: 
+    29: 
+    30: 
+    31: 
+    32: }
+    33: 
+    34: 
+    35: void LCD_Delay_Scrol(void)
+    36: {
+    37:  signed int ctr;
+    38:  for(ctr=0;ctr<=4000;ctr++);
+    39: 
+    40: }
+    41: 
+    42: void Set_LCD_Command(unsigned char lcd_cmd)
+    43: {
+    44: 
+    45:         LCD_COMMAND_DATA=lcd_cmd;
+    46:         LCD_RS=0;
+    47:         lcd_en();
+    48:  
+    49: }
+    50: 
+    51: void Set_LCD_Data(char lcd_data)
+    52: {
+    53:         
+    54:     LCD_COMMAND_DATA=lcd_data;
+    55:     LCD_RS=1;
+    56:     lcd_en();
+    57: }
+    58: 
+    59: void Init_LCD(void)
+    60: {
+    61:         Set_LCD_Command(LCD_INIT);
+    62:         Set_LCD_Command(LCD_DISPLAY_ON);
+    63:         Set_LCD_Command(LCD_CLEAR);
+    64: }
+    65: 
+    66:  void LCD_Delay(void)
+    67: {
+    68:         unsigned int lcd_dly_ctr;
+    69:         for(lcd_dly_ctr=0;lcd_dly_ctr <=60000;lcd_dly_ctr++);
+    70: }
+    71: 
+    72: void lcd_en(void)
+    73: {   
+    74:         LCD_EN=0;
+    75:         LCD_EN=1;
+    76:         LCD_Delay();
+    77:         LCD_EN=0;
+    78:         
+    79: }
+    80: 
+    81: 
+    82: 
+    83: void clr_lcd(void)
+    84: {
+    85: 
+    86:         Set_LCD_Command(LCD_CLEAR);
+    87:         lcd_en();
+    88: }
+    89: 
+    90: 
+    91: void lcd_puts(const char * s)
+    92: {
+    93: LCD_RS = 1;     // write characters
+    94: //      lcd_en();
+    95:         while(*s)
+    96:                 Set_LCD_Data(*s++);
+    97: }
+    98: 
+    99: void lcd_goto(unsigned char pos)
+   100: {
+   101:         LCD_RS = 0;
+   102:         Set_LCD_Data(0x80+pos);
+   103: }
+   104: 
+   105: 
+   106: void Set_LCD_Num(int num)
+   107: {
+   108: unsigned char d1,d2,d3;
+   109: 
+   110:         d1=(num/100)|0X30;
+   111:   num=num%100;
+   112: 
+   113:   d2=(num/10)|0X30;
+   114:   d3=(num%10)|0X30;
+   115: 
+   116: 
+   117:   Set_LCD_Data(d1);
+   118:   Set_LCD_Data(d2);
+   119:   Set_LCD_Data(d3);
+   120: 
+   121: 
+   122: }
+   123: 
+   124: 
+   125: void lcd_write(unsigned char c)
+   126: {
+   127:         PORTD = (PORTD & 0xF0) |  (c >> 4);
+   128:         LCD_STROBE;
+   129:         PORTD = (PORTD & 0xF0) |  (c & 0x0F);
+   130:         LCD_STROBE;
+   131:         LCD_Delay();
+   132: }
+   133: 
+   134: void lcd_num_float(float num)
+   135: {
+   136: float temp[6];
+   137: sprintf(temp,"%0.2f",num);
+   138: lcd_puts(temp);
+   139: 
+   140: }
+   141: 
