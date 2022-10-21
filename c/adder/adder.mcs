@@ -1,0 +1,15 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=D:\studies\home_works\embedded\pic\mp lab\c\adder\adder.obj
+Folder=Intermediary
+[File001]
+Location=D:\studies\home_works\embedded\pic\mp lab\c\adder\adder.cce
+Folder=Intermediary
+[File002]
+Location=D:\studies\home_works\embedded\pic\mp lab\c\adder\adder.lde
+Folder=Intermediary
+[File003]
+Location=adder.hex
+Folder=Output

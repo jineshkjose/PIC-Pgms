@@ -1,0 +1,18 @@
+     1: #include<stdio.h>
+     2: #include<pic.h>
+     3: 
+     4: void adc_init();
+     5: unsigned char adc_convert();
+     6: 
+     7: void main()
+     8: {
+     9:         
+    10: TRISD0=0;
+    11: TRISD1=0;
+    12:         while(1)
+    13:         {
+    14:         RD0=0;
+    15:         RD1=1;
+    16:         
+    17: }
+    18: }

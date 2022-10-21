@@ -1,0 +1,134 @@
+     1: /*
+     2:  *      LCD interface example
+     3:  *      Uses routines from delay.c
+     4:  *      This code will interface to a standard LCD controller
+     5:  *      like the Hitachi HD44780. It uses it in 4 bit mode, with
+     6:  *      the hardware connected as follows (the standard 14 pin 
+     7:  *      LCD connector is used):
+     8:  *      
+     9:  *      DATA bits 0-3 are connected to the LCD data bits 4-7 (high nibble)
+    10:  *      PORTA bit 2 is connected to the LCD RS input (register select)
+    11:  *      PORTA bit 3 is connected to the LCD EN bit (enable)
+    12:  *      
+    13:  *      To use these routines, set up the port I/O (TRISA, TRISB) then
+    14:  *      call lcd_init(), then other routines as required.
+    15:  *      
+    16:  */
+    17: 
+    18: #include        <pic.h>
+    19: #include        "lcd.h"
+    20: #include        "delay.h"
+    21: #include        <stdio.h>
+    22: 
+    23: #define         DATA    PORTD
+    24: 
+    25: static bit LCD_RS       @ ((unsigned)&PORTC*8+4);       // Register select
+    26: static bit LCD_EN       @ ((unsigned)&PORTC*8+5);       // Enable
+    27: 
+    28: #define LCD_STROBE              LCD_EN = 1;\
+    29:                                                 DelayUs(100);\
+    30:                                                 LCD_EN=0;\
+    31:                                                 DelayUs(100);
+    32: 
+    33: 
+    34: /* write a byte to the LCD in 4 bit mode */
+    35: 
+    36: void
+    37: lcd_write(unsigned char c)
+    38: {
+    39:         DATA = (DATA & 0xF0) |  (c >> 4);
+    40:         LCD_STROBE;
+    41:         DATA = (DATA & 0xF0) |  (c & 0x0F);
+    42:         LCD_STROBE;
+    43:         DelayUs(250);
+    44: }
+    45: 
+    46: /*
+    47:  *      Clear and home the LCD
+    48:  */
+    49: 
+    50: void
+    51: lcd_clear(void)
+    52: {
+    53:         LCD_RS = 0;
+    54:         lcd_write(0x1);
+    55:         DelayMs(20);
+    56: }
+    57: 
+    58: /* write a string of chars to the LCD */
+    59: 
+    60: void
+    61: lcd_puts(const char * s)
+    62: {
+    63:         LCD_RS = 1;     // write characters
+    64:         while(*s)
+    65:                 lcd_write(*s++);
+    66: }
+    67: 
+    68: /* write one character to the LCD */
+    69: 
+    70: void
+    71: lcd_putch(char c)
+    72: {
+    73:         LCD_RS = 1;     // write characters
+    74:         DATA = (DATA & 0xF0) |  (c >> 4);
+    75:         LCD_STROBE;
+    76:         DATA = (DATA & 0xF0) |  (c & 0x0F);
+    77:         LCD_STROBE;
+    78:         DelayUs(250);
+    79: }
+    80: 
+    81: 
+    82: /*
+    83:  * Go to the specified position
+    84:  */
+    85: 
+    86: void
+    87: lcd_goto(unsigned char pos)
+    88: {
+    89:         LCD_RS = 0;
+    90:         lcd_write(0x80+pos);
+    91: }
+    92: 
+    93: void
+    94: lcd_num_float(float num)
+    95: {
+    96: float temp[6];
+    97: sprintf(temp,"%0.3f",num);
+    98: lcd_puts(temp);
+    99: DelayMs(20);
+   100: }
+   101: 
+   102: void
+   103: lcd_num_dec(int num)
+   104: {
+   105: char temp[6];
+   106: sprintf(temp,"%d",num);
+   107: lcd_puts(temp);
+   108: DelayMs(20);
+   109: }
+   110: 
+   111:         
+   112: /* initialise the LCD - put into 4 bit mode */
+   113: 
+   114: void
+   115: lcd_init(void)
+   116: {
+   117:         LCD_RS = 0;     // write control bytes
+   118:         DelayMs(15);    // power on delay
+   119:         DATA = 0x3;     // attention!
+   120:         LCD_STROBE;
+   121:         DelayMs(5);
+   122:         LCD_STROBE;
+   123:         DelayUs(100);
+   124:         LCD_STROBE;
+   125:         DelayMs(5);
+   126:         DATA = 0x2;     // set 4 bit mode
+   127:         LCD_STROBE;
+   128:         DelayUs(40);
+   129:         lcd_write(0x28);        // 4 bit mode, 1/16 duty, 5x8 font
+   130:         lcd_write(0x08);        // display off
+   131:         lcd_write(0x0C);        // display on, blink curson on
+   132:         lcd_write(0x06);        // entry mode
+   133: }
+   134: 
