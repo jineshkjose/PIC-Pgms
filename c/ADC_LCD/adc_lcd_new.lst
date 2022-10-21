@@ -1,0 +1,46 @@
+     1: #include<pic.h>
+     2: #include "dd_lcd.h"
+     3: 
+     4: float data;
+     5: unsigned char adc;
+     6: 
+     7: 
+     8: int main(void)
+     9: 
+    10: {
+    11:         
+    12:         int i;
+    13: 
+    14:         TRISA=0xFF;
+    15:         //TRISC=0xFF;
+    16:         ADCON0=0X81;
+    17:         ADCON1=0X00;
+    18:         Config_IO();
+    19:         Init_LCD();
+    20:         clr_lcd();
+    21:         Set_LCD_Command(LCD_ROW1);
+    22:     LCD_Scrol_String("DIGITAL VOLT METER");
+    23:         lcd_puts("Result     =");
+    24: while(1)
+    25: {
+    26:         
+    27:         for (i=0;i<250;++i);
+    28:         ADGO=1;
+    29:         while(ADGO);
+    30: Set_LCD_Command(LCD_ROW2);
+    31: adc = ADRESH;
+    32:                 data = ((5.0/255)*adc);
+    33:                 lcd_num_float(data);
+    34: 
+    35: 
+    36: lcd_puts(" DC Volt");
+    37:         
+    38: 
+    39: 
+    40:         
+    41:            
+    42: 
+    43: }
+    44: //return 0;
+    45: }
+    46: 

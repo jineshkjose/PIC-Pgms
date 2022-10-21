@@ -1,0 +1,66 @@
+     1: #include<stdio.h>
+     2: #include<pic.h>
+     3: 
+     4: 
+     5: 
+     6: 
+     7: #define on 0XFF
+     8: #define off 0X00
+     9: 
+    10: 
+    11: void config_io(void)
+    12: {
+    13: TRISB=0X00;
+    14: }
+    15: 
+    16: void delay(void)
+    17: {
+    18: unsigned int delay;
+    19: for(delay=0;delay<65000;delay++);
+    20: }
+    21: 
+    22: 
+    23: 
+    24: void main(void)
+    25: {
+    26: config_io();
+    27:  
+    28: while(1)
+    29: {
+    30: 
+    31: 
+    32: PORTB=off;
+    33: delay();
+    34: 
+    35: PORTB=0X0C;
+    36: delay();
+    37: 
+    38: PORTB=0XB6;
+    39: delay();
+    40: 
+    41: PORTB=0X9E;
+    42: delay();
+    43: 
+    44: PORTB=0XCC;
+    45: delay();
+    46: 
+    47: PORTB=0XDA;
+    48: delay();
+    49: 
+    50: PORTB=0XFA;
+    51: delay();
+    52: 
+    53: PORTB=0X4E;
+    54: delay();
+    55: 
+    56: PORTB=0XFF;
+    57: delay();
+    58: 
+    59: PORTB=0XDE;
+    60: delay();
+    61: 
+    62: PORTB=0X7F;
+    63: delay();
+    64: 
+    65: }
+    66: }

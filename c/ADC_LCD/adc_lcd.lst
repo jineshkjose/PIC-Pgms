@@ -1,0 +1,26 @@
+     1: #include<stdio.h>
+     2: #include<pic.h>
+     3: 
+     4: void main(void)
+     5: {       
+     6:         TRISA           = 0X01;
+     7:         TRISD           = 0x00;
+     8:         ADCON0          = 0X81;                 // Clock = fosc/2,Channel = 0, GO_DONE = 0, A2D Module Turned 'ON'
+     9:         ADCON1          = 0X80;                 // A/D Result Format Right Justified, AN0 to AN7 Configured Analog Input, Vref = VDD
+    10:         //ADGO=1;
+    11:         ADON=1; 
+    12: 
+    13: while(1)
+    14: {
+    15: ADGO=1;
+    16:         if(ADGO==0)     
+    17:         PORTD   = ADRESL;
+    18: }
+    19: }
+    20: 
+    21:         
+    22:         
+    23: 
+    24: 
+    25: 
+    26:         

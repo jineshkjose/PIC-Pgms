@@ -1,0 +1,42 @@
+     1: #include <pic.h>
+     2: #include "delay.h"
+     3: #include "lcd.h"
+     4: 
+     5: float data;
+     6: unsigned char adc;
+     7: 
+     8: main()
+     9: {
+    10:         TRISA0 = 1;
+    11:         TRISC = 0x00;
+    12:         lcd_init();
+    13:         DelayMs(20);
+    14:         lcd_clear();
+    15:         DelayMs(20);
+    16:         lcd_goto(0x00);
+    17:         DelayMs(20);
+    18:         lcd_puts("A/D Convertor");
+    19:         DelayMs(20);
+    20:         ADCON1 = 0x00;
+    21:         ADCS1 = 1;
+    22:         ADCS0 = 0;
+    23:         CHS2 = 0;
+    24:         CHS1 = 0;
+    25:         CHS0 = 0;
+    26:         ADFM = 0;
+    27:         ADON = 1;
+    28:         
+    29:         while(1)
+    30:         {
+    31:                 lcd_goto(0x40);
+    32:                 DelayMs(20);
+    33:                 ADGO = 1;
+    34:                 while(ADGO);
+    35:                 adc = ADRESH;
+    36:                 data = ((5.0/255)*adc);
+    37:                 lcd_num_float(data);
+    38:                 DelayMs(20);
+    39:                 lcd_puts("   ");
+    40:                 DelayMs(20);
+    41:         }
+    42: }

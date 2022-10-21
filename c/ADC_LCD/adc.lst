@@ -1,0 +1,33 @@
+     1: #include<stdio.h>
+     2: #include<pic.h>
+     3: #include "dd_lcd.h"
+     4: 
+     5: void main(void)
+     6: {
+     7:         int i;
+     8:         unsigned int res;
+     9:         //Config_IO();
+    10:         //Init_LCD();
+    11:         TRISA=0xFF;
+    12:         //TRISD=0x00;
+    13:         ADCON0=0X81;
+    14:         ADCON1=0X00;
+    15: //clr_lcd();
+    16: //      Set_LCD_Command(LCD_ROW1);
+    17:   //  lcd_puts("ADC RESULT");
+    18: 
+    19: 
+    20: while(1)
+    21:         {
+    22:         
+    23:         for (i=0;i<250;++i);
+    24:         ADGO=1;
+    25:         while(ADGO);
+    26:         //Set_LCD_Command(LCD_ROW2); 
+    27:         //PORTD=ADRESH;
+    28:         //res=ADRESH*.020;
+    29:         //Set_LCD_Num(res);
+    30:         }
+    31: 
+    32:         
+    33: }

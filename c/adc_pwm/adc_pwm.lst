@@ -1,0 +1,45 @@
+     1: #include<stdio.h>
+     2: #include<pic.h>
+     3: 
+     4: void adc_init();
+     5: unsigned char adc_convert();
+     6: 
+     7: void main()
+     8: {
+     9:         CCP1CON = 0X0F;         // PWM Mode Selected
+    10:         T2CON           = 0X00; // TMR2 Prescaler = 1:1, Turned OFF
+    11:         PR2             = 255;  // Period of PWM
+    12:         CCPR1L          = 0;    // 'ON' Time of PWM
+    13:         TRISC2          = 0X00; 
+    14:         TMR2ON          = 0X01;
+    15: TRISD0=0;
+    16: TRISD1=0;
+    17:         while(1)
+    18:         {
+    19:         RD0=0;
+    20:         RD1=1;
+    21:                 while(TMR2IF)
+    22:                 {
+    23:                         TMR2IF  = 0x00;
+    24:                         CCPR1L  = adc_convert();
+    25:                 }
+    26:         }               
+    27: }
+    28: 
+    29: void adc_init()
+    30: {
+    31:         ADCON0          = 0X81; // Clock = fosc/2,Channel = 0, GO_DONE = 0, A2D Module Turned 'ON'
+    32:         ADCON1          = 0X80; // A/D Result Format Right Justified, AN0 to AN7 Configured as Analog Input, Vref = VDD
+    33:         TRISA           = 0X00; // Port A Configured as Output
+    34: }
+    35: 
+    36: unsigned char adc_convert()
+    37: {
+    38:         char i;
+    39:         adc_init();             // ADC Initialized
+    40:         for (i=0; i<10; i++);   // ADC Initializing Delay
+    41:         ADGO    = 0X01;         // Conversion Initialized
+    42:         while(ADGO);            // Waiting for Conversion Completion
+    43:         ADON    = 0x00;         // ADC Turned 'OFF'
+    44:         return (ADRESL);        // Digital Value Returned
+    45: }

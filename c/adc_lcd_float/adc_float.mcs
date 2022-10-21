@@ -1,0 +1,27 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=D:\Mplab Progs\c\adc_lcd_float\adc-lcd.obj
+Folder=Intermediary
+[File001]
+Location=D:\Mplab Progs\c\adc_lcd_float\adc-lcd.cce
+Folder=Intermediary
+[File002]
+Location=D:\Mplab Progs\c\adc_lcd_float\delay.obj
+Folder=Intermediary
+[File003]
+Location=D:\Mplab Progs\c\adc_lcd_float\delay.cce
+Folder=Intermediary
+[File004]
+Location=D:\Mplab Progs\c\adc_lcd_float\lcd.obj
+Folder=Intermediary
+[File005]
+Location=D:\Mplab Progs\c\adc_lcd_float\lcd.cce
+Folder=Intermediary
+[File006]
+Location=D:\Mplab Progs\c\adc_lcd_float\adc_float.lde
+Folder=Intermediary
+[File007]
+Location=adc_float.cof
+Folder=Output

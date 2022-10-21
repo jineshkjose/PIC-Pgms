@@ -1,0 +1,353 @@
+used_btemp3 1 0
+?a_lcd_num_float 29 0 BANK0
+__Hinit23 8 0 CODE
+__Linit23 8 0 CODE
+used_btemp11 1 0
+_Set_LCD_Num 9A 0 CODE
+__Hcode_ptr 5E 0 BANK0
+__Lcode_ptr 5C 0 BANK0
+__S0 2100 0
+__S1 190 0
+_adc 20 0 BANK0
+used_btemp4 1 0
+?_Set_LCD_Num 24 0 BANK0
+used_btemp5 1 0
+used_btemp12 1 0
+l0neg 72D 0 CODE
+ftadd 5A4 0 CODE
+_data 21 0 BANK0
+ftneg 725 0 CODE
+llmod 73B 0 CODE
+awmod 672 0 CODE
+lwmod 687 0 CODE
+ftsub 5A2 0 CODE
+_main F2 0 CODE
+abmul EF6 0 CODE
+ftcmp 5D3 0 CODE
+lbmul EF6 0 CODE
+almul 7C3 0 CODE
+fttol 63C 0 CODE
+llmul 7C3 0 CODE
+zerct 6D9 0 CODE
+ftmul 5FB 0 CODE
+lldiv 73B 0 CODE
+awdiv 672 0 CODE
+_exit 4 0 CODE
+lwdiv 687 0 CODE
+start 4 0 CODE
+?a_Set_LCD_Num 24 0 BANK0
+used_btemp6 1 0
+used_code_ptr 1 0
+_Init_LCD F45 0 CODE
+used_btemp7 1 0
+used_btemp13 1 0
+__Hfloat_text2 58 0 CODE
+__Lfloat_text2 58 0 CODE
+__Brbit_0 20 FFFFFF20 BANK0
+__Hrbit_0 100 FFFFFF20 BANK0
+__Lrbit_0 100 FFFFFF20 BANK0
+used_btemp8 1 0
+__Brbit_1 A0 FFFFFBA0 BANK1
+__Hrbss_0 59 0 BANK0
+__Hrbit_1 500 FFFFFBA0 BANK1
+__Lrbss_0 20 0 BANK0
+__Lrbit_1 500 FFFFFBA0 BANK1
+__Brbit_2 110 FFFFF890 BANK2
+__Hrbss_1 A0 0 BANK1
+__Hrbit_2 880 FFFFF890 BANK2
+__Lrbss_1 A0 0 BANK1
+__Lrbit_2 880 FFFFF890 BANK2
+__Brbit_3 190 FFFFF510 BANK3
+__Hrbss_2 110 0 BANK2
+__Hrbit_3 C80 FFFFF510 BANK3
+__Lrbss_2 110 0 BANK2
+__Lrbit_3 C80 FFFFF510 BANK3
+flunpack1 6CD 0 CODE
+ftunpack1 531 0 CODE
+__Hrbss_3 190 0 BANK3
+_putch EED 0 CODE
+__Lrbss_3 190 0 BANK3
+__Hintcode 4 0 CODE
+__Lintcode 4 0 CODE
+flunpack2 6DE 0 CODE
+used_btemp9 1 0
+ftunpack2 540 0 CODE
+intlevel0 4 0 CODE
+used_btemp14 1 0
+abtoft 524 0 CODE
+lbtoft 52D 0 CODE
+altoft 65F 0 CODE
+doldiv 73F 0 CODE
+lltoft 664 0 CODE
+dowdiv 688 0 CODE
+zerctt 53C 0 CODE
+intlevel1 4 0 CODE
+__Heeprom_data 2100 0 EEDATA
+__Leeprom_data 2100 0 EEDATA
+?a_LCD_Delay_Scrol 28 0 BANK0
+__Hidata_0 58 0 CODE
+__Lidata_0 58 0 CODE
+__Hrdata_0 59 0 BANK0
+__Lrdata_0 59 0 BANK0
+__Hintsave_0 190 0
+__Lintsave_0 190 0
+__Hidata_1 58 0 CODE
+__Lidata_1 58 0 CODE
+__Hrdata_1 A0 0 BANK1
+__Lrdata_1 A0 0 BANK1
+flnorm1 6FA 0 CODE
+ftnorm1 55B 0 CODE
+__Hidata_2 58 0 CODE
+__Hintsave 190 0
+__Lidata_2 58 0 CODE
+__Lintsave 190 0
+__Hintentry 4 0 CODE
+__Lintentry 4 0 CODE
+__Hrdata_2 110 0 BANK2
+__Lrdata_2 110 0 BANK2
+_lcd_write F5A 0 CODE
+__Hidata_3 58 0 CODE
+__Lidata_3 58 0 CODE
+__Hrdata_3 190 0 BANK3
+__Lrdata_3 190 0 BANK3
+?a_lcd_write 24 0 BANK0
+__Hnvram_1 A0 0 BANK1
+?a_Set_LCD_Data 40 0 BANK0
+__Lnvram_1 A0 0 BANK1
+__Bnvbit_0 59 FFFFFD91 BANK0
+__Hnvbit_0 2C8 FFFFFD91 BANK0
+__Lnvbit_0 2C8 FFFFFD91 BANK0
+?a_sprintf 41 0 BANK0
+__Hnvram_2 110 0 BANK2
+__Lnvram_2 110 0 BANK2
+__Hintsave_1 190 0
+__Lintsave_1 190 0
+__Bnvbit_1 A0 FFFFFBA0 BANK1
+__Hnvbit_1 500 FFFFFBA0 BANK1
+__Lnvbit_1 500 FFFFFBA0 BANK1
+__Hnvram_3 190 0 BANK3
+__Lnvram_3 190 0 BANK3
+__Bnvbit_2 110 FFFFF890 BANK2
+__Hnvbit_2 880 FFFFF890 BANK2
+__Lnvbit_2 880 FFFFF890 BANK2
+ftadd_f 581 0 CODE
+__Hcode 190 0
+__Lcode 190 0
+ftsub_f 57F 0 CODE
+almul_f 6C1 0 CODE
+llmul_f 6C1 0 CODE
+ftmul_f 5F2 0 CODE
+lldiv_f 7B7 0 CODE
+__Bnvbit_3 190 FFFFF510 BANK3
+__Hnvbit_3 C80 FFFFF510 BANK3
+__Lnvbit_3 C80 FFFFF510 BANK3
+__Hfloat_text3 58 0 CODE
+__Lfloat_text3 58 0 CODE
+_lcd_en F02 0 CODE
+?a_main 24 0 BANK0
+_LCD_Delay F77 0 CODE
+__Htemp 7C 0 BANK0
+__Ltemp 70 0 BANK0
+ftadd_x 5A5 0 CODE
+abmul_t EF7 0 CODE
+lbmul_t EF7 0 CODE
+__Hinit 8 0 CODE
+__Linit 4 0 CODE
+__Hintsave_2 190 0
+__Lintsave_2 190 0
+almul_x 7C4 0 CODE
+llmul_x 7C4 0 CODE
+ftmul_x 5FC 0 CODE
+lldiv_x 73C 0 CODE
+powerup 0 0 CODE
+_LCD_Delay_Scrol FB6 0 CODE
+__Htext 190 0
+__Ltext 190 0
+__Hstrings 58 0 STRING
+__Lstrings 29 0 STRING
+__Hstringtable 29 0 ENTRY
+__Lstringtable 13 0 ENTRY
+__Hintsave_3 190 0
+__Lintsave_3 190 0
+__Hcommon_ram 190 0
+__Lcommon_ram 190 0
+?_lcd_num_float 26 0 BANK0
+_LCD_Scrol_String 59 0 CODE
+?_LCD_Scrol_String 26 0 BANK0
+?a_Set_LCD_Command 28 0 BANK0
+__Hpowerup 4 0 CODE
+__Lpowerup 0 0 CODE
+__Hvectors 58 0 CODE
+__Lvectors 58 0 CODE
+?_lcd_puts 3E 0 BANK0
+_Config_IO EEF 0 CODE
+__Hclrtext 13 0 CODE
+__Lclrtext C 0 CODE
+storeback 7F1 0 CODE
+__Hconfig 2007 0 CONFIG
+__Lconfig 2007 0 CONFIG
+__Hfloat_text0 800 0 CODE
+__Lfloat_text0 6C1 0 CODE
+clear_ram F 0 CODE
+__Hfloat_text4 672 0 CODE
+__Lfloat_text4 524 0 CODE
+string_indir 16 0 ENTRY
+?_sprintf 3E 0 BANK0
+?a_LCD_Delay 41 0 BANK0
+storeback_3 518 0 CODE
+_lcd_goto F29 0 CODE
+__Hintret 4 0 CODE
+__Lintret 4 0 CODE
+__Hstruct 5E 0 BANK0
+__Lstruct 5E 0 BANK0
+_lcd_num_float F96 0 CODE
+_lcd_puts FDB 0 CODE
+_clr_lcd F37 0 CODE
+__Hidloc 2000 0 IDLOC
+__Lidloc 2000 0 IDLOC
+clear_bank0 4 0 CODE
+__Hnvram 59 0 BANK0
+__Lnvram 59 0 BANK0
+_Set_LCD_Data F1C 0 CODE
+_sprintf 187 0 CODE
+string_table 13 0 ENTRY
+__Hxtemp 5C 0 BANK0
+__Lxtemp 59 0 BANK0
+ftdenorm 58A 0 CODE
+__H__Z49231UD_ 190 0
+__L__Z49231UD_ 190 0
+code_ptr 5C 0 BANK0
+__Hfloat_text1 6C1 0 CODE
+__Lfloat_text1 672 0 CODE
+used_btemp0 1 0
+__Hpstrings 29 0 CODE
+__Lpstrings 29 0 CODE
+__Hend_init C 0 CODE
+__Lend_init 8 0 CODE
+?a_lcd_goto 24 0 BANK0
+used_btemp1 1 0
+used_btemp10 1 0
+_Set_LCD_Command F0F 0 CODE
+used_btemp2 1 0
+%segments
+powerup 0 7 CODE
+intentry 8 AF CODE
+rbit_0 100 13D BANK0
+temp 70 7B COMBANK
+float_text0 D82 FFF CODE
+float_text1 CE4 D81 CODE
+float_text4 A48 CE3 CODE
+ftext0 A30 A47 CODE
+text0 30E A2F CODE
+text0 1E4 30D CODE
+text11 134 1E3 CODE
+text1 B2 133 CODE
+text9 1FB6 1FFF CODE
+text2 1F6C 1FB5 CODE
+text13 1F2C 1F6B CODE
+text6 1EEE 1F2B CODE
+text12 1EB4 1EED CODE
+text5 1E8A 1EB3 CODE
+text8 1E6E 1E89 CODE
+text10 1E52 1E6D CODE
+text4 1E38 1E51 CODE
+text3 1E1E 1E37 CODE
+text7 1E04 1E1D CODE
+text 1DEC 1E03 CODE
+text0 1DDE 1DEB CODE
+text0 1DDA 1DDD CODE
+%locals
+D:\Mplab Progs\c\ADC_LCD\dd_lcd.obj
+btemp 70 0 BANK0
+status 3
+D:\Mplab Progs\c\ADC_LCD\dd_lcd.c
+11 EEF 0 CODE
+12 EF2 0 CODE
+17 EF3 0 CODE
+23 59 0 CODE
+24 5F 0 CODE
+26 60 0 CODE
+27 72 0 CODE
+28 78 0 CODE
+24 7D 0 CODE
+30 8C 0 CODE
+31 91 0 CODE
+36 97 0 CODE
+40 FB6 0 CODE
+42 FB6 0 CODE
+44 FD8 0 CODE
+49 F0F 0 CODE
+50 F12 0 CODE
+51 F13 0 CODE
+53 F19 0 CODE
+58 F1C 0 CODE
+59 F1F 0 CODE
+60 F20 0 CODE
+61 F26 0 CODE
+65 F45 0 CODE
+66 F4B 0 CODE
+67 F51 0 CODE
+68 F57 0 CODE
+71 F77 0 CODE
+73 F77 0 CODE
+74 F93 0 CODE
+78 F02 0 CODE
+79 F05 0 CODE
+80 F06 0 CODE
+81 F0B 0 CODE
+83 F0C 0 CODE
+90 F37 0 CODE
+91 F3D 0 CODE
+92 F42 0 CODE
+99 FDB 0 CODE
+100 FDC 0 CODE
+99 FEE 0 CODE
+101 FFD 0 CODE
+105 F29 0 CODE
+106 F2C 0 CODE
+107 F34 0 CODE
+111 9A 0 CODE
+114 9A 0 CODE
+115 AC 0 CODE
+117 BD 0 CODE
+118 CD 0 CODE
+121 DD 0 CODE
+122 E3 0 CODE
+123 E9 0 CODE
+126 EF 0 CODE
+130 F5A 0 CODE
+131 F5D 0 CODE
+132 F64 0 CODE
+133 F66 0 CODE
+134 F6D 0 CODE
+135 F6F 0 CODE
+136 F74 0 CODE
+139 F96 0 CODE
+141 F96 0 CODE
+142 FAA 0 CODE
+144 FB3 0 CODE
+D:\Mplab Progs\c\ADC_LCD\adc_lcd_new.obj
+btemp 70 0 BANK0
+status 3
+D:\Mplab Progs\c\ADC_LCD\adc_lcd_new.c
+10 F2 0 CODE
+14 F2 0 CODE
+16 F6 0 CODE
+17 F9 0 CODE
+18 FB 0 CODE
+19 100 0 CODE
+20 105 0 CODE
+21 10A 0 CODE
+22 110 0 CODE
+23 119 0 CODE
+24 122 0 CODE
+27 123 0 CODE
+28 145 0 CODE
+29 148 0 CODE
+30 14F 0 CODE
+31 155 0 CODE
+32 157 0 CODE
+33 16F 0 CODE
+36 17A 0 CODE
+24 183 0 CODE
+45 184 0 CODE
