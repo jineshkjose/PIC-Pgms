@@ -1,0 +1,38 @@
+     1: #include<pic.h>
+     2: #include"delay.h"
+     3: #include"lcd.h"
+     4: 
+     5: float data;
+     6: unsigned char adc;
+     7: main()
+     8: {
+     9:         int i;
+    10:         TRISA=0xFF;
+    11:         TRISD = 0x00;
+    12:         ADCON0=0X81;
+    13:         ADCON1=0X00;
+    14: 
+    15:         lcd_init();
+    16:         DelayMs(20);
+    17:         lcd_goto(0x00);
+    18:         DelayMs(20);
+    19:         lcd_clear();
+    20:         DelayMs(20);
+    21:         lcd_puts("..:: ADC ::..");
+    22:         lcd_clear();
+    23:         while(1)
+    24:         {       
+    25:         for (i=0;i<250;++i);
+    26:         ADGO=1;
+    27:         while(ADGO);
+    28:         
+    29:         lcd_goto(0x00); 
+    30:         adc = ADRESH;
+    31:                 data = ((5.0/255)*adc);
+    32: lcd_num_float(data);
+    33:                         
+    34:                 
+    35:                 
+    36:         }
+    37:         
+    38: }

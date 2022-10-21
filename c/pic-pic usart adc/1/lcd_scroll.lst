@@ -1,0 +1,35 @@
+     1: #include<pic.h>
+     2: #include"delay.h"
+     3: #include"lcd.h"
+     4: unsigned char i;
+     5: main()
+     6: {
+     7:         int i;
+     8:         TRISA=0xFF;
+     9:         //TRISD = 0x00;
+    10:         lcd_init();
+    11:         DelayMs(20);
+    12:         lcd_goto(0x00);
+    13:         DelayMs(20);
+    14:         lcd_clear();
+    15:         DelayMs(20);
+    16:         
+    17:         
+    18: 
+    19:         while(1)
+    20:         {       
+    21:                 lcd_init_cursor_left_end();
+    22:                 DelayMs(20);
+    23:                 
+    24:                 lcd_puts("Welcome to world");
+    25:                 DelayMs(100);
+    26:                         
+    27:                 for(i=0;i<32;i++)
+    28:                 {
+    29:                         lcd_scroll_right();
+    30:                         DelayMs(100);
+    31:                 }
+    32:                 
+    33:         }
+    34:         
+    35: }

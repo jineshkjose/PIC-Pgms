@@ -1,0 +1,27 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=D:\Mplab Progs\c\pic-pic usart adc\1\delay.obj
+Folder=Intermediary
+[File001]
+Location=D:\Mplab Progs\c\pic-pic usart adc\1\delay.cce
+Folder=Intermediary
+[File002]
+Location=D:\Mplab Progs\c\pic-pic usart adc\1\lcd.obj
+Folder=Intermediary
+[File003]
+Location=D:\Mplab Progs\c\pic-pic usart adc\1\lcd.cce
+Folder=Intermediary
+[File004]
+Location=D:\Mplab Progs\c\pic-pic usart adc\1\main1.obj
+Folder=Intermediary
+[File005]
+Location=D:\Mplab Progs\c\pic-pic usart adc\1\main1.cce
+Folder=Intermediary
+[File006]
+Location=D:\Mplab Progs\c\pic-pic usart adc\1\pic_pic.lde
+Folder=Intermediary
+[File007]
+Location=pic_pic.cof
+Folder=Output

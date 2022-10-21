@@ -1,0 +1,12 @@
+     1: #include<pic.h>
+     2: 
+     3: void main(void)
+     4: {
+     5: PR2=0X27;       //0X7F
+     6: CCPR1L=0X14;//0X3F
+     7: CCP1CON=0X0F;
+     8: TRISC2=0X00;
+     9: T2CON=0X00;
+    10: TMR2ON=0X00;
+    11: while(1);
+    12: }

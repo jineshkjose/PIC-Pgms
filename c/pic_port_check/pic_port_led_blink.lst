@@ -1,0 +1,56 @@
+     1: #include<stdio.h>
+     2: #include<pic.h>
+     3: 
+     4: 
+     5: #define led_array1 PORTA
+     6: #define led_array2 PORTB
+     7: #define led_array3 PORTC
+     8: #define led_array4 PORTD
+     9: 
+    10: #define on 0XFF
+    11: #define off 0X00
+    12: 
+    13: 
+    14: void config_io(void)
+    15: {
+    16: ADCON1=0X06;
+    17: TRISA=0X00;
+    18: TRISB=0X00;
+    19: TRISC=0X00;
+    20: TRISD=0X00;
+    21: }
+    22: 
+    23: void delay(void)
+    24: {
+    25: unsigned int delay;
+    26: for(delay=0;delay<60000;delay++);
+    27: 
+    28: }
+    29: void main(void)
+    30: {
+    31: config_io();
+    32: led_array1=off; 
+    33: led_array2=off; 
+    34: led_array3=off; 
+    35: led_array4=off; 
+    36: while(1)
+    37: {
+    38: led_array1=on; 
+    39: delay();
+    40: led_array1=off; 
+    41: delay();
+    42: led_array2=on; 
+    43: delay();
+    44: led_array2=off; 
+    45: delay();
+    46: led_array3=on; 
+    47: delay();
+    48: led_array3=off;
+    49: delay();
+    50: led_array4=on; 
+    51: delay();
+    52: led_array4=off; 
+    53: delay();
+    54: 
+    55: }
+    56: }

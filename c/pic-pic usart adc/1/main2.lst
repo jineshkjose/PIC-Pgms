@@ -1,0 +1,52 @@
+     1: #include<pic.h>
+     2: #include"delay.h"
+     3: #include"lcd.h"
+     4: 
+     5: float data;
+     6: unsigned char adc;
+     7: int flag=0;
+     8: 
+     9: main()
+    10: {
+    11:         int i;
+    12:         
+    13:         TRISD = 0x00;
+    14: 
+    15:         
+    16: 
+    17: 
+    18: SPBRG=129;
+    19: BRGH=1;
+    20: SYNC=0;
+    21: SPEN=1;
+    22: CREN=1;
+    23: RX9=0;
+    24: RCIF=0;
+    25: RCIE=0;
+    26: 
+    27: 
+    28:         lcd_init();
+    29:         DelayMs(20);
+    30:         lcd_goto(0x00);
+    31:         DelayMs(20);
+    32:         lcd_clear();
+    33:         DelayMs(20);
+    34:         lcd_puts("..:: ADC ::..");
+    35:         lcd_clear();
+    36:         while(1)
+    37:         {       
+    38: 
+    39: if(RCIF==1)
+    40: {
+    41: RCIF=0;
+    42: lcd_goto(0x00);
+    43: data=RCREG;
+    44: lcd_num_float(data);
+    45: //lcd_putch(data);
+    46: 
+    47: }
+    48: 
+    49: }
+    50:         
+    51: }
+    52: 
