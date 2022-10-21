@@ -1,0 +1,8 @@
+Warning[205] D:\STUDIES\HOME_WORKS\EMBEDDED\PIC\MP LAB\ASM\TIMER1\TIMER1.ASM 1 : Found directive in column 1. (INCLUDE)
+Warning[205] D:\STUDIES\HOME_WORKS\EMBEDDED\PIC\MP LAB\ASM\TIMER1\TIMER1.ASM 4 : Found directive in column 1. (ORG)
+Warning[203] D:\STUDIES\HOME_WORKS\EMBEDDED\PIC\MP LAB\ASM\TIMER1\TIMER1.ASM 5 : Found opcode in column 1. (GOTO)
+Warning[205] D:\STUDIES\HOME_WORKS\EMBEDDED\PIC\MP LAB\ASM\TIMER1\TIMER1.ASM 6 : Found directive in column 1. (ORG)
+Warning[203] D:\STUDIES\HOME_WORKS\EMBEDDED\PIC\MP LAB\ASM\TIMER1\TIMER1.ASM 7 : Found opcode in column 1. (GOTO)
+Message[302] D:\STUDIES\HOME_WORKS\EMBEDDED\PIC\MP LAB\ASM\TIMER1\TIMER1.ASM 14 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\STUDIES\HOME_WORKS\EMBEDDED\PIC\MP LAB\ASM\TIMER1\TIMER1.ASM 28 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Error[173]   D:\STUDIES\HOME_WORKS\EMBEDDED\PIC\MP LAB\ASM\TIMER1\TIMER1.ASM 54 : Source file path exceeds 62 characters (D:\STUDIES\HOME_WORKS\EMBEDDED\PIC\MP LAB\ASM\TIMER1\TIMER1.ASM)
