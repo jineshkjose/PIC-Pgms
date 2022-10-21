@@ -1,0 +1,22 @@
+     1: #include<pic.h>
+     2: #include"delay.h"
+     3: #include"lcd.h"
+     4: unsigned char i;
+     5: main()
+     6: {
+     7:         TRISC = 0x00;
+     8:         lcd_init();
+     9:         DelayMs(20);
+    10:         lcd_goto(0x00);
+    11:         DelayMs(20);
+    12:         lcd_clear();
+    13:         DelayMs(20);
+    14:         
+    15:         
+    16: 
+    17:         while(1)
+    18:         {       
+    19:                 lcd_scroll_puts("Welcome To The World Of Electronics");         
+    20:         }
+    21:         
+    22: }

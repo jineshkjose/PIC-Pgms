@@ -1,0 +1,27 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=E:\Mplab Progs\LCD_SCROLL\delay.obj
+Folder=Intermediary
+[File001]
+Location=E:\Mplab Progs\LCD_SCROLL\delay.cce
+Folder=Intermediary
+[File002]
+Location=E:\Mplab Progs\LCD_SCROLL\lcd.obj
+Folder=Intermediary
+[File003]
+Location=E:\Mplab Progs\LCD_SCROLL\lcd.cce
+Folder=Intermediary
+[File004]
+Location=E:\Mplab Progs\LCD_SCROLL\lcd_scroll_using_single_funct.obj
+Folder=Intermediary
+[File005]
+Location=E:\Mplab Progs\LCD_SCROLL\lcd_scroll_using_single_funct.cce
+Folder=Intermediary
+[File006]
+Location=E:\Mplab Progs\LCD_SCROLL\LCD_SCROLL.lde
+Folder=Intermediary
+[File007]
+Location=LCD_SCROLL.hex
+Folder=Output

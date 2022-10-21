@@ -1,0 +1,28 @@
+     1: /*
+     2:  *      Delay functions
+     3:  *      See delay.h for details
+     4:  *
+     5:  *      Make sure this code is compiled with full optimization!!!
+     6:  */
+     7: 
+     8: #include        "delay.h"
+     9: 
+    10: void
+    11: DelayMs(unsigned char cnt)
+    12: {
+    13: #if     XTAL_FREQ <= 2MHZ
+    14:         do {
+    15:                 DelayUs(996);
+    16:         } while(--cnt);
+    17: #endif
+    18: 
+    19: #if    XTAL_FREQ > 2MHZ 
+    20:         unsigned char   i;
+    21:         do {
+    22:                 i = 4;
+    23:                 do {
+    24:                         DelayUs(250);
+    25:                 } while(--i);
+    26:         } while(--cnt);
+    27: #endif
+    28: }

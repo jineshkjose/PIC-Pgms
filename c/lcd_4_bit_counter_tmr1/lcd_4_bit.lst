@@ -1,0 +1,58 @@
+     1: #include <pic.h>
+     2: #include "delay.h"
+     3: #include "dd_lcd.h"
+     4: 
+     5: float data;
+     6: unsigned char adc,ss,mm,hh;
+     7: 
+     8: main()
+     9: {
+    10:         
+    11: lcd_config();
+    12:         lcd_init();
+    13:         DelayMs(20);
+    14:         lcd_clear();
+    15:         DelayMs(20);
+    16:         lcd_goto(0x00);
+    17: //lcd_puts("65757");
+    18:         DelayMs(20);
+    19: //scroll();
+    20: 
+    21:         DelayMs(20);
+    22:         ss=mm=hh=0;
+    23:         while(1)
+    24:         {
+    25: DelayMs(100);
+    26: //lcd_clear();
+    27:         lcd_goto(0x00);
+    28: lcd_puts("      ");
+    29:         DelayMs(2);
+    30: lcd_num_dec(hh);
+    31: lcd_puts(":");
+    32: DelayMs(50);
+    33: lcd_num_dec(mm);
+    34: lcd_puts(":");
+    35: DelayMs(50);
+    36: lcd_num_dec(ss);
+    37: 
+    38: 
+    39: ss++;
+    40: if(ss==60)
+    41: {
+    42: ss=0;
+    43: mm++;
+    44: lcd_clear();
+    45: if(mm==60)
+    46: {
+    47: mm=0;
+    48: hh++;
+    49: lcd_clear();
+    50: }
+    51: }
+    52: 
+    53: 
+    54: DelayMs(150);
+    55: //DelayMs(1000);
+    56:         
+    57:         }
+    58: }

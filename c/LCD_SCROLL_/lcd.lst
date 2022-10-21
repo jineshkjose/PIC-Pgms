@@ -1,0 +1,192 @@
+     1: /*
+     2:  *      LCD interface example
+     3:  *      Uses routines from delay.c
+     4:  *      This code will interface to a standard LCD controller
+     5:  *      like the Hitachi HD44780. It uses it in 4 bit mode, with
+     6:  *      the hardware connected as follows (the standard 14 pin 
+     7:  *      LCD connector is used):
+     8:  *      
+     9:  *      DATA bits 0-3 are connected to the LCD data bits 4-7 (high nibble)
+    10:  *      PORTA bit 2 is connected to the LCD RS input (register select)
+    11:  *      PORTA bit 3 is connected to the LCD EN bit (enable)
+    12:  *      
+    13:  *      To use these routines, set up the port I/O (TRISA, TRISB) then
+    14:  *      call lcd_init(), then other routines as required.
+    15:  *      
+    16:  */
+    17: 
+    18: #include        <pic.h>
+    19: #include        "lcd.h"
+    20: #include        "delay.h"
+    21: #include        <stdio.h>
+    22: 
+    23: #define         DATA    PORTC
+    24: 
+    25: static bit LCD_RS       @ ((unsigned)&PORTC*8+4);       // Register select
+    26: static bit LCD_EN       @ ((unsigned)&PORTC*8+5);       // Enable
+    27: 
+    28: #define LCD_STROBE              LCD_EN = 1;\
+    29:                                                 DelayUs(100);\
+    30:                                                 LCD_EN=0;\
+    31:                                                 DelayUs(100);
+    32: 
+    33: 
+    34: /* write a byte to the LCD in 4 bit mode */
+    35: 
+    36: void
+    37: lcd_write(unsigned char c)
+    38: {
+    39:         DATA = (DATA & 0xF0) |  (c >> 4);
+    40:         LCD_STROBE;
+    41:         DATA = (DATA & 0xF0) |  (c & 0x0F);
+    42:         LCD_STROBE;
+    43:         DelayUs(250);
+    44: }
+    45: 
+    46: /*
+    47:  *      Clear and home the LCD
+    48:  */
+    49: 
+    50: void
+    51: lcd_clear(void)
+    52: {
+    53:         LCD_RS = 0;
+    54:         lcd_write(0x1);
+    55:         DelayMs(20);
+    56: }
+    57: 
+    58: /* write a string of chars to the LCD */
+    59: 
+    60: void
+    61: lcd_puts(const char * s)
+    62: {
+    63:         LCD_RS = 1;     // write characters
+    64:         while(*s)
+    65:         {
+    66:                 
+    67:                 lcd_write(*s++);
+    68:                 
+    69:         }
+    70: }
+    71: 
+    72: void
+    73: lcd_scroll_puts(const char * s)
+    74: {
+    75:         unsigned char i,no_char = 0;
+    76:         
+    77:         lcd_init_cursor_left_end();
+    78:         DelayMs(20);
+    79:         
+    80:         LCD_RS = 1;     // write characters
+    81:         while(*s)
+    82:         {
+    83:                 lcd_write(*s++);
+    84:                 no_char++;
+    85:         }
+    86:                 
+    87:         for(i=0;i<(2*no_char);i++)
+    88:                 {
+    89:                         lcd_scroll_right();
+    90:                         DelayMs(100);
+    91:                 }
+    92: }
+    93: 
+    94: /* write one character to the LCD */
+    95: 
+    96: void
+    97: lcd_putch(char c)
+    98: {
+    99:         LCD_RS = 1;     // write characters
+   100:         DATA = (DATA & 0xF0) |  (c >> 4);
+   101:         LCD_STROBE;
+   102:         DATA = (DATA & 0xF0) |  (c & 0x0F);
+   103:         LCD_STROBE;
+   104:         DelayUs(250);
+   105: }
+   106: 
+   107: 
+   108: /*
+   109:  * Go to the specified position
+   110:  */
+   111: 
+   112: void
+   113: lcd_goto(unsigned char pos)
+   114: {
+   115:         LCD_RS = 0;
+   116:         lcd_write(0x80+pos);
+   117: }
+   118: 
+   119: void
+   120: lcd_num_float(float num)
+   121: {
+   122: float temp[6];
+   123: sprintf(temp,"%0.3f",num);
+   124: lcd_puts(temp);
+   125: DelayMs(20);
+   126: }
+   127: 
+   128: void
+   129: lcd_num_dec(int num)
+   130: {
+   131: char temp[6];
+   132: sprintf(temp,"%d",num);
+   133: lcd_puts(temp);
+   134: DelayMs(20);
+   135: }
+   136: 
+   137: void
+   138: lcd_scroll(void)
+   139: {
+   140:         LCD_RS = 0;
+   141:         lcd_write(0x18);
+   142:         DelayMs(2);
+   143: }
+   144: 
+   145: void
+   146: lcd_scroll_right(void)
+   147: {
+   148:         LCD_RS = 0;
+   149:         lcd_write(0x1C);
+   150:         DelayMs(2);
+   151: }
+   152: 
+   153: void
+   154: lcd_cursor_right(void)
+   155: {
+   156:         LCD_RS = 0;
+   157:         lcd_write(0x14);
+   158:         DelayMs(2);
+   159: }
+   160: 
+   161: void
+   162: lcd_init_cursor_left_end(void)
+   163: {
+   164:         LCD_RS = 0;
+   165:         lcd_write(0x8f);
+   166:         DelayMs(2);
+   167: }
+   168: 
+   169:         
+   170: /* initialise the LCD - put into 4 bit mode */
+   171: 
+   172: void
+   173: lcd_init(void)
+   174: {
+   175:         LCD_RS = 0;     // write control bytes
+   176:         DelayMs(15);    // power on delay
+   177:         DATA = 0x3;     // attention!
+   178:         LCD_STROBE;
+   179:         DelayMs(5);
+   180:         LCD_STROBE;
+   181:         DelayUs(100);
+   182:         LCD_STROBE;
+   183:         DelayMs(5);
+   184:         DATA = 0x2;     // set 4 bit mode
+   185:         LCD_STROBE;
+   186:         DelayUs(40);
+   187:         lcd_write(0x28);        // 4 bit mode, 1/16 duty, 5x8 font
+   188:         lcd_write(0x08);        // display off
+   189:         lcd_write(0x0C);        // display on, blink curson on
+   190:         lcd_write(0x06);        // entry mode
+   191: }
+   192: 

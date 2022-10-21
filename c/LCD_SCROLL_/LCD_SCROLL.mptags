@@ -1,0 +1,51 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+DATA::PORTC	E:\Mplab Progs\LCD_SCROLL\lcd.c	23;"	d	line:23	file:
+DelayMs	E:\Mplab Progs\LCD_SCROLL\delay.c	11;"	f	line:11	signature:(unsigned char cnt)
+DelayUs::(x){unsignedchar_dcnt;\	E:\Mplab Progs\LCD_SCROLL\delay.h	38;"	d	line:38
+KHZ::*1	E:\Mplab Progs\LCD_SCROLL\delay.h	34;"	d	line:34
+LCD_STROBE::LCD_EN=1;\	E:\Mplab Progs\LCD_SCROLL\lcd.c	28;"	d	line:28	file:
+MHZ::*1000L	E:\Mplab Progs\LCD_SCROLL\delay.h	33;"	d	line:33
+XTAL_FREQ::20MHZ	E:\Mplab Progs\LCD_SCROLL\delay.h	30;"	d	line:30
+bit	E:\Mplab Progs\LCD_SCROLL\lcd.c	25;"	p	line:25	file:	signature:(unsigned)&PORTC*8+4
+bit	E:\Mplab Progs\LCD_SCROLL\lcd.c	26;"	p	line:26	file:	signature:(unsigned)&PORTC*8+5
+i	E:\Mplab Progs\LCD_SCROLL\delay.c	20;"	l	line:20
+i	E:\Mplab Progs\LCD_SCROLL\lcd.c	75;"	l	line:75
+i	E:\Mplab Progs\LCD_SCROLL\lcd_scroll_using_single_funct.c	4;"	v	line:4
+lcd_clear	E:\Mplab Progs\LCD_SCROLL\lcd.c	51;"	f	line:51	signature:(void)
+lcd_clear	E:\Mplab Progs\LCD_SCROLL\lcd.h	12;"	p	line:12	signature:(void)
+lcd_cursor::(x)lcd_write(((x)&0x7F)|0x80)	E:\Mplab Progs\LCD_SCROLL\lcd.h	43;"	d	line:43
+lcd_cursor_right	E:\Mplab Progs\LCD_SCROLL\lcd.c	154;"	f	line:154	signature:(void)
+lcd_cursor_right	E:\Mplab Progs\LCD_SCROLL\lcd.h	18;"	p	line:18	signature:(void)
+lcd_goto	E:\Mplab Progs\LCD_SCROLL\lcd.c	113;"	f	line:113	signature:(unsigned char pos)
+lcd_goto	E:\Mplab Progs\LCD_SCROLL\lcd.h	33;"	p	line:33	signature:(unsigned char pos)
+lcd_init	E:\Mplab Progs\LCD_SCROLL\lcd.c	173;"	f	line:173	signature:(void)
+lcd_init	E:\Mplab Progs\LCD_SCROLL\lcd.h	37;"	p	line:37	signature:(void)
+lcd_init_cursor_left_end	E:\Mplab Progs\LCD_SCROLL\lcd.c	162;"	f	line:162	signature:(void)
+lcd_init_cursor_left_end	E:\Mplab Progs\LCD_SCROLL\lcd.h	20;"	p	line:20	signature:(void)
+lcd_num_dec	E:\Mplab Progs\LCD_SCROLL\lcd.c	129;"	f	line:129	signature:(int num)
+lcd_num_dec	E:\Mplab Progs\LCD_SCROLL\lcd.h	30;"	p	line:30	signature:(int)
+lcd_num_float	E:\Mplab Progs\LCD_SCROLL\lcd.c	120;"	f	line:120	signature:(float num)
+lcd_num_float	E:\Mplab Progs\LCD_SCROLL\lcd.h	28;"	p	line:28	signature:(float)
+lcd_putch	E:\Mplab Progs\LCD_SCROLL\lcd.c	97;"	f	line:97	signature:(char c)
+lcd_putch	E:\Mplab Progs\LCD_SCROLL\lcd.h	39;"	p	line:39	signature:(char)
+lcd_puts	E:\Mplab Progs\LCD_SCROLL\lcd.c	61;"	f	line:61	signature:(const char * s)
+lcd_puts	E:\Mplab Progs\LCD_SCROLL\lcd.h	26;"	p	line:26	signature:(const char * s)
+lcd_scroll	E:\Mplab Progs\LCD_SCROLL\lcd.c	138;"	f	line:138	signature:(void)
+lcd_scroll	E:\Mplab Progs\LCD_SCROLL\lcd.h	14;"	p	line:14	signature:(void)
+lcd_scroll_puts	E:\Mplab Progs\LCD_SCROLL\lcd.c	73;"	f	line:73	signature:(const char * s)
+lcd_scroll_puts	E:\Mplab Progs\LCD_SCROLL\lcd.h	22;"	p	line:22	signature:(const char *)
+lcd_scroll_right	E:\Mplab Progs\LCD_SCROLL\lcd.c	146;"	f	line:146	signature:(void)
+lcd_scroll_right	E:\Mplab Progs\LCD_SCROLL\lcd.h	16;"	p	line:16	signature:(void)
+lcd_write	E:\Mplab Progs\LCD_SCROLL\lcd.c	37;"	f	line:37	signature:(unsigned char c)
+lcd_write	E:\Mplab Progs\LCD_SCROLL\lcd.h	8;"	p	line:8	signature:(unsigned char)
+main	E:\Mplab Progs\LCD_SCROLL\lcd_scroll_using_single_funct.c	5;"	f	line:5
+no_char	E:\Mplab Progs\LCD_SCROLL\lcd.c	75;"	l	line:75
+temp	E:\Mplab Progs\LCD_SCROLL\lcd.c	122;"	l	line:122
+temp	E:\Mplab Progs\LCD_SCROLL\lcd.c	131;"	l	line:131
